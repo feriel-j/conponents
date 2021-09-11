@@ -1,18 +1,22 @@
+import "./App.css";
+import { Profil } from "./components/Profile/Profil";
 
-import './App.css';
-import {ProfilePhoto} from './components/Profile/ProfilePhoto'
-import {FullName} from './components/Profile/FullName'
-import {Address} from './components/Profile/Address'
 function App() {
+  const person = {
+    name: "feriel",
+    age: 25,
+    bio: "full stack js developer",
+  };
+
+  const alertt = (x) => {
+    alert(x);
+  };
+
   return (
     <div className="container">
-      <h1> Welcome to my profile</h1>
-      <ProfilePhoto/>
-      <div className="comp">
-      
-      <FullName/>
-      <Address/>
-      </div>
+      <Profil person={person} alertt={alertt}>
+        <h1>this is child props</h1>
+      </Profil>
     </div>
   );
 }
